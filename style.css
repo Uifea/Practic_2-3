@@ -62,7 +62,7 @@ th, td {
     padding: 10px;
 }
 
-.sorting-id, .sorting-user-id {
+.sorting-id, .sorting-user-id, .sorting-title, .sorting-body {
     cursor: pointer;
     text-decoration: underline;
 }

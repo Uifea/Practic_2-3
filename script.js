@@ -18,8 +18,8 @@ fetch(url)
         let tableHeader = `<tr>
                                 <th class="sorting-id">id</th>
                                 <th class="sorting-user-id">userId</th>
-                                <th>title</th>
-                                <th>body</th>
+                                <th class="sorting-title">title</th>
+                                <th class="sorting-body">body</th>
                             </tr>`
 
         //Добавление данных в таблицу
@@ -83,6 +83,36 @@ fetch(url)
                     createArr(newArr);
                 }
             }
+
+            if(e.target.classList.contains('sorting-title')) {
+                if (newArr[0].title < newArr[newArr.length-1].title) {
+                    newArr.sort((a, b) => a.title < b.title ? 1 : -1);
+                    tableBody.innerHTML = tableHeader;
+                
+                    createArr(newArr);
+                } else if (newArr[0].title > newArr[newArr.length-1].title) {
+                    newArr.sort((a, b) => a.title > b.title ? 1 : -1);
+                    tableBody.innerHTML = tableHeader;
+                
+                    createArr(newArr);
+                }
+            }
+
+            if(e.target.classList.contains('sorting-body')) {
+                if (newArr[0].body < newArr[newArr.length-1].body) {
+                    newArr.sort((a, b) => a.body < b.body ? 1 : -1);
+                    tableBody.innerHTML = tableHeader;
+                
+                    createArr(newArr);
+                } else if (newArr[0].body > newArr[newArr.length-1].body) {
+                    newArr.sort((a, b) => a.body > b.body ? 1 : -1);
+                    tableBody.innerHTML = tableHeader;
+                
+                    createArr(newArr);
+                }
+            }
+
+
         })
 
         
